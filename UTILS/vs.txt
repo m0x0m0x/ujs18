@@ -1,0 +1,18 @@
+// Prettier, Indent Rainbow , Error Lens Color , Sweet Icons , Obsidian Theme , Mayuki theme 
+{
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "editor.renderWhitespace": "all",
+  "editor.guides.bracketPairs": "active",
+  "editor.lineHeight": 2,
+  "editor.fontSize": 17,
+  "editor.fontFamily": "GoMono Nerd Font",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.iconTheme": "simple-icons",
+  "workbench.colorTheme": "Obsidian Dark",
+  "editor.stickyScroll.enabled": true
+}
