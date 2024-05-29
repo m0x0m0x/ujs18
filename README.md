@@ -1,5 +1,7 @@
 # ujs18
 
+<img src="./IMG/x.gif" width="200%">
+
 ![](./IMG/x.gif)
 
 # UJS 18
