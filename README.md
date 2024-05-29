@@ -2,8 +2,6 @@
 
 <img src="./IMG/x.gif" width="200%">
 
-![](./IMG/x.gif)
-
 # UJS 18
 
 [FinalFiles](https://github.com/jonasschmedtmann/complete-javascript-course/tree/master/18-forkify/final)
