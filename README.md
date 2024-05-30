@@ -1,6 +1,6 @@
 # ujs18
 
-<img src="./IMG/x.gif" width="200%">
+<!-- <img src="./IMG/x.gif" width="200%"> -->
 
 # UJS 18
 
