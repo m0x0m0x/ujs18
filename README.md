@@ -17,3 +17,10 @@
 # UrFuck
 
 [`https://ujs18.vercel.app/`](https://ujs18.vercel.app/)
+
+# APYpusy
+
+[`https://forkify-api.herokuapp.com/v2`](https://forkify-api.herokuapp.com/v2)
+
+- made for the course
+- booty6d693618-7b34-4bf1-ba2d-c5375c0770e5
