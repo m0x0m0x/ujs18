@@ -24,7 +24,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #615551;
-  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  background-image: url("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3F5NTN3OXNwMXc5bjB3bms2MW51Zjg2bmtkY2oyZzRwcmJhMGFpayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AeWntMyxGFXXi/giphy.gif");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 8vw);
