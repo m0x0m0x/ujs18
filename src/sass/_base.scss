@@ -16,6 +16,8 @@ $bp-medium: 61.25em; // 980px
 $bp-small: 37.5em; // 600px
 $bp-smallest: 31.25em; // 500px
 
+// My section
+
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +43,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: $color-grey-dark-1;
-  background-image: url("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3F5NTN3OXNwMXc5bjB3bms2MW51Zjg2bmtkY2oyZzRwcmJhMGFpayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AeWntMyxGFXXi/giphy.gif");
+  background-image: url("../img/p.gif");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);
