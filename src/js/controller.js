@@ -4,14 +4,6 @@ import recipeView from "./views/recipeView.js";
 
 const recipeContainer = document.querySelector(".recipe");
 
-const timeout = function (s) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(new Error(`Request took too long! Timeout after ${s} second`));
-    }, s * 1000);
-  });
-};
-
 /*
 https://forkify-api.herokuapp.com/v2
 Pakey - 6d693618-7b34-4bf1-ba2d-c5375c0770e5
