@@ -21,6 +21,7 @@ export const loadRecipe = async function (id) {
 
     //Formatting the response
     const { recipe } = data.data;
+    recipe.image_url = recipe.image_url.replace('http://', 'https://');
     state.recipe = {
       id: recipe.id,
       title: recipe.title,
