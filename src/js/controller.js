@@ -36,26 +36,14 @@ const myRecWrong =
 const myR2 =
   "https://forkify-api.herokuapp.com/api/v2/recipes/664c8f193e7aa067e94e8706";
 
-const renderSpinner = function (parentEl) {
-  const markup = `
-      <div class="spinner">
-            <svg>
-              <use href="src/img/icons.svg#icon-loader"></use>
-            </svg>
-      </div>
-    `;
-  parentEl.innerHTML = "";
-  parentEl.insertAdjacentHTML("afterbegin", markup);
-};
-
-const showRecipe = async function () {
+const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
     console.log(id);
 
     //guardclause
     if (!id) return;
-    renderSpinner(recipeContainer);
+    recipeView.renderSpinner();
 
     //Loading recipe
     await model.loadRecipe(id);
@@ -69,12 +57,14 @@ const showRecipe = async function () {
     alert(error);
   }
 };
-showRecipe();
+controlRecipes();
 
 // Listening for the hashes, which is listening for an event
 
 // This code is optimized below
-// window.addEventListener("hashchange", showRecipe);
-// window.addEventListener("load", showRecipe);
+// window.addEventListener("hashchange", controlRecipes);
+// window.addEventListener("load", controlRecipes);
 
-["hashchange", "load"].forEach((ev) => window.addEventListener(ev, showRecipe));
+["hashchange", "load"].forEach((ev) =>
+  window.addEventListener(ev, controlRecipes)
+);
