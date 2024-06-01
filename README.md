@@ -24,3 +24,7 @@
 
 - made for the course
 - booty6d693618-7b34-4bf1-ba2d-c5375c0770e5
+
+# Directories
+
+[`OLD`](./OLD/) - Contains files until L292 , then L293 which is implementing MVC will be outside it
