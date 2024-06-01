@@ -24,17 +24,6 @@ Example URL:https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054
 // Fetch variable
 
 // This key required for deleting a recipee
-const myRec =
-  "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886?key=6d693618-7b34-4bf1-ba2d-c5375c0770e5";
-
-const myRec2 =
-  "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886";
-
-const myRecWrong =
-  "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886xxxx";
-
-const myR2 =
-  "https://forkify-api.herokuapp.com/api/v2/recipes/664c8f193e7aa067e94e8706";
 
 const controlRecipes = async function () {
   try {
