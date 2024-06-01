@@ -1,3 +1,6 @@
+// Import statements
+import * as model from "./model.js";
+
 const recipeContainer = document.querySelector(".recipe");
 
 const timeout = function (s) {
@@ -51,31 +54,11 @@ const showRecipe = async function () {
 
     //guardclause
     if (!id) return;
-
-    //Loading recipe
     renderSpinner(recipeContainer);
 
-    const res = await fetch(
-      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
-    );
-    const data = await res.json();
-
-    if (!res.ok) throw new Error(`${data.message} - ${res.status}`);
-
-    console.log(res, data);
-
-    //Formatting the response
-    let { recipe } = data.data;
-    recipe = {
-      id: recipe.id,
-      title: recipe.title,
-      publisher: "Rapist",
-      sourceUrl: recipe.source_url,
-      image: recipe.image_url,
-      servings: recipe.servings,
-      cookingTime: recipe.cooking_time,
-      ingredients: recipe.ingredients,
-    };
+    //Loading recipe
+    await model.loadRecipe(id);
+    const { recipe } = model.state;
 
     // 2 rendering recipe
 
