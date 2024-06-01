@@ -46,10 +46,15 @@ const renderSpinner = function (parentEl) {
 
 const showRecipe = async function () {
   try {
+    const id = window.location.hash.slice(1);
+    console.log(id);
+
     //Loading recipe
     renderSpinner(recipeContainer);
 
-    const res = await fetch(myR2);
+    const res = await fetch(
+      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
+    );
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} - ${res.status}`);
@@ -178,3 +183,6 @@ const showRecipe = async function () {
   }
 };
 showRecipe();
+
+// Listening for the hashes, which is listening for an event
+window.addEventListener("hashchange", showRecipe);
