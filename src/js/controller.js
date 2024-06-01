@@ -32,9 +32,22 @@ const myRecWrong =
 const myR2 =
   "https://forkify-api.herokuapp.com/api/v2/recipes/664c8f193e7aa067e94e8706";
 
+const renderSpinner = function (parentEl) {
+  const markup = `
+      <div class="spinner">
+            <svg>
+              <use href="src/img/icons.svg#icon-loader"></use>
+            </svg>
+      </div>
+    `;
+  parentEl.innerHTML = "";
+  parentEl.insertAdjacentHTML("afterbegin", markup);
+};
+
 const showRecipe = async function () {
   try {
     //Loading recipe
+    renderSpinner(recipeContainer);
 
     const res = await fetch(myR2);
     const data = await res.json();
