@@ -49,6 +49,9 @@ const showRecipe = async function () {
     const id = window.location.hash.slice(1);
     console.log(id);
 
+    //guardclause
+    if (!id) return;
+
     //Loading recipe
     renderSpinner(recipeContainer);
 
@@ -185,4 +188,9 @@ const showRecipe = async function () {
 showRecipe();
 
 // Listening for the hashes, which is listening for an event
-window.addEventListener("hashchange", showRecipe);
+
+// This code is optimized below
+// window.addEventListener("hashchange", showRecipe);
+// window.addEventListener("load", showRecipe);
+
+["hashchange", "load"].forEach((ev) => window.addEventListener(ev, showRecipe));
