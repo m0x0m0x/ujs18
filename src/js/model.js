@@ -11,7 +11,7 @@ export const state = {
 export const loadRecipe = async function (id) {
   try {
     const res = await fetch(
-      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
+      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}key=6d693618-7b34-4bf1-ba2d-c5375c0770e5`
     );
     const data = await res.json();
 
