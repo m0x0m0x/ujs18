@@ -1,0 +1,3 @@
+/* 
+Views from the MC architecture
+*/
