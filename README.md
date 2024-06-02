@@ -28,3 +28,14 @@
 # Directories
 
 [`OLD`](./OLD/) - Contains files until L292 , then L293 which is implementing MVC will be outside it
+nw delic
+
+# Notes
+
+## Location of the IDs
+
+1. IN L296 - Trying to test error handling you have to change the id , the id can be found in
+
+```js
+index.html - L85;
+```
