@@ -1,7 +1,7 @@
 /*
 Function that will be reused over and over 
 */
-import { TIMEOUT_SEC } from "./config";
+import { TIMEOUT_SEC } from "./config.js";
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
