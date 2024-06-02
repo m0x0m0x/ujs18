@@ -35,17 +35,12 @@ const controlRecipes = async function () {
     console.log("Printing the destructured");
     console.log(model.state.recipe);
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };
 controlRecipes();
 
-// Listening for the hashes, which is listening for an event
-
-// This code is optimized below
-// window.addEventListener("hashchange", controlRecipes);
-// window.addEventListener("load", controlRecipes);
-
-["hashchange", "load"].forEach((ev) =>
-  window.addEventListener(ev, controlRecipes)
-);
+const init = function () {
+  recipeView.addHandlerRender(controlRecipes);
+};
+init();
