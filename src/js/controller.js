@@ -35,7 +35,7 @@ const controlRecipes = async function () {
     console.log("Printing the destructured");
     console.log(model.state.recipe);
   } catch (error) {
-    recipeView.renderError(`${error}😡😡😡`);
+    recipeView.renderError();
   }
 };
 controlRecipes();

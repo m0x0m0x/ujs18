@@ -5,6 +5,7 @@ Views from the MC architecture
 class RecipeView {
   #parentElement = document.querySelector(".recipe");
   #data;
+  #errorMessage = `Recipe Not Found`;
 
   render(data) {
     this.#data = data;
@@ -29,7 +30,7 @@ class RecipeView {
     this.#parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  renderError(msg) {
+  renderError(msg = this.#errorMessage) {
     const markup = `
     <div class="error">
     <div>
