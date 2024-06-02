@@ -3,7 +3,6 @@
     "start": "servor --reload"
   },
   "dependencies": {
-    "fractional": "^1.0.0",
     "servor": "^4.0.2"
   },
   "devDependencies": {
