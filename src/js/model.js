@@ -3,7 +3,7 @@ model.js - From L293
 Model from he MVC architecture
 */
 
-import { API_URL } from "./config.js";
+import { API_URL, RES_PER_PAGE } from "./config.js";
 import { getJSON } from "./helpers.js";
 
 // State contains all data to build appliation
@@ -12,6 +12,7 @@ export const state = {
   search: {
     query: "",
     results: [],
+    resultsPerPage: RES_PER_PAGE,
   },
 };
 
@@ -61,4 +62,13 @@ export const loadSearchResults = async function (query) {
     console.error(`${err}😡`);
     throw err;
   }
+};
+
+// Pagination section
+export const getSearchResultsPage = function (page) {
+  // common method of pagination
+  const start = (page - 1) * state.search.resultsPerPage; //0;
+  const end = page * state.search.resultsPerPage; //9;
+
+  return state.search.results.slice(start, end);
 };
