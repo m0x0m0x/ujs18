@@ -4,64 +4,10 @@ Views from the MVC architecture
 
 import View from "./View.js";
 
-class RecipeView {
+class RecipeView extends View {
   _parentElement = document.querySelector(".recipe");
-  _data;
   _errorMessage = `Recipe Not Found`;
   _message = "";
-
-  render(data) {
-    this._data = data;
-    const markup = this._generateMarkup();
-    this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
-  }
-
-  _clear() {
-    this._parentElement.innerHTML = "";
-  }
-
-  renderSpinner() {
-    const markup = `
-        <div class="spinner">
-              <svg>
-                <use href="src/img/icons.svg#icon-loader"></use>
-              </svg>
-        </div>
-      `;
-    this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
-  }
-
-  renderError(msg = this._errorMessage) {
-    const markup = `
-    <div class="error">
-    <div>
-    <svg>
-    <use href="src/img/icons.svg#icon-alert-triangle"></use>
-    </svg>
-    </div>
-    <p>${msg}</p>
-    </div> 
-    `;
-    this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
-  }
-
-  renderMessage(msg = this._message) {
-    const markup = `
-    <div class="message">
-    <div>
-    <svg>
-    <use href="src/img/icons.svg#icon-smile"></use>
-    </svg>
-    </div>
-    <p>${msg}</p>
-    </div> 
-    `;
-    this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
-  }
 
   // add handler render method
   addHandlerRender(handler) {
