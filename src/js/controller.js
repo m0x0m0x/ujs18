@@ -1,7 +1,7 @@
 // Import statements
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
-import searchViews from "./views/searchViews.js";
+import searchViews from "./views/searchView.js";
 
 // const recipeContainer = document.querySelector(".recipe");
 
