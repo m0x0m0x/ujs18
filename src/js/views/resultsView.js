@@ -6,6 +6,7 @@ import View from "./View.js";
 
 class ResultsView extends View {
   _parentElement = document.querySelector(".results");
+  _errorMessage = "NoFucker DO again bastard";
 
   _generateMarkup() {
     console.log(this._data);
