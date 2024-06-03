@@ -8,7 +8,6 @@
       transition: all 0.3s;
       border-right: 1px solid #fff;
       text-decoration: none;
-      background-color: #083344;
     }
 
     &:hover {
@@ -17,7 +16,7 @@
     }
 
     &--active {
-      background-color: $color-grey-light-1;
+      background-color: #3b0764;
     }
   }
 
