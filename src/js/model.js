@@ -13,7 +13,7 @@ export const state = {
 // state object
 export const loadRecipe = async function (id) {
   try {
-    const data = await getJSON(`${API_URL}/${id}`);
+    const data = await getJSON(`${API_URL}${id}`);
 
     //Formatting the response
     const { recipe } = data.data;
@@ -35,3 +35,15 @@ export const loadRecipe = async function (id) {
     throw err;
   }
 };
+
+// Implementing the search functionality
+export const loadSearchResults = async function (query) {
+  try {
+    const data = await getJSON(`${API_URL}?search=${query}`);
+    console.log(data);
+  } catch (err) {
+    console.error(`${err}😡`);
+    throw err;
+  }
+};
+loadSearchResults("burger");
