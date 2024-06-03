@@ -38,7 +38,17 @@ const controlRecipes = async function () {
     recipeView.renderError();
   }
 };
-controlRecipes();
+// controlRecipes();
+
+const controlSearchResults = async function () {
+  try {
+    await model.loadSearchResults("pizza");
+    console.log(model.state.search.results);
+  } catch (error) {
+    console.log(error);
+  }
+};
+controlSearchResults();
 
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);

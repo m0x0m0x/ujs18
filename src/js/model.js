@@ -6,8 +6,13 @@ Model from he MVC architecture
 import { API_URL } from "./config.js";
 import { getJSON } from "./helpers.js";
 
+// State contains all data to build appliation
 export const state = {
   recipe: {},
+  search: {
+    query: "",
+    results: [],
+  },
 };
 
 // state object
@@ -39,11 +44,21 @@ export const loadRecipe = async function (id) {
 // Implementing the search functionality
 export const loadSearchResults = async function (query) {
   try {
+    state.search.query = query;
     const data = await getJSON(`${API_URL}?search=${query}`);
     console.log(data);
+
+    // Here this state variable is extracting data from the api
+    state.search.results = data.data.recipes.map((rec) => {
+      return {
+        id: rec.id,
+        title: rec.title,
+        publisher: "Rapist",
+        image: rec.image_url,
+      };
+    });
   } catch (err) {
     console.error(`${err}😡`);
     throw err;
   }
 };
-loadSearchResults("burger");
