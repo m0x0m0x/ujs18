@@ -69,8 +69,8 @@ const controlSearchResults = async function () {
 
 // Buttons event delefation
 
-const controlPagination = function () {
-  console.log("PagConroller");
+const controlPagination = function (goToPage) {
+  console.log(goToPage);
 };
 
 const init = function () {
