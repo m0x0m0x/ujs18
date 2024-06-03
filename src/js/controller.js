@@ -67,8 +67,15 @@ const controlSearchResults = async function () {
 };
 // controlSearchResults();
 
+// Buttons event delefation
+
+const controlPagination = function () {
+  console.log("PagConroller");
+};
+
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   searchViews.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
 };
 init();
