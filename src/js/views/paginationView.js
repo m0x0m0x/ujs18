@@ -11,6 +11,10 @@ class PaginationVIew extends View {
     this._parentElement.addEventListener("click", function (e) {
       const btn = e.target.closest(".btn--inline");
       console.log(btn);
+
+      const goToPage = btn.dataset.goto;
+      console.log(goToPage);
+
       handler();
     });
   }
@@ -26,7 +30,9 @@ class PaginationVIew extends View {
     // Page 1 and there are other pages
     if (curPage === 1 && numPages > 1) {
       return `
-        <button class="btn--inline pagination__btn--next">
+        <button data-goto="${
+          curPage + 1
+        }" class="btn--inline pagination__btn--next">
             <span>Page ${curPage + 1}</span>
             <svg class="search__icon">
               <use href="src/img/icons.svg#icon-arrow-right"></use>
@@ -37,7 +43,9 @@ class PaginationVIew extends View {
     // On Last page
     if (curPage === numPages && numPages > 1) {
       return `
-        <button class="btn--inline pagination__btn--prev">
+        <button data-goto="${
+          curPage - 1
+        }" class="btn--inline pagination__btn--prev">
             <svg class="search__icon">
               <use href="src/img/icons.svg#icon-arrow-left"></use>
             </svg>
@@ -48,13 +56,17 @@ class PaginationVIew extends View {
     // Other Page
     if (curPage < numPages) {
       return `
-        <button class="btn--inline pagination__btn--prev">
+        <button data-goto="${
+          curPage - 1
+        }" class="btn--inline pagination__btn--prev">
             <svg class="search__icon">
               <use href="src/img/icons.svg#icon-arrow-left"></use>
             </svg>
             <span>Page ${curPage - 1}</span>
         </button>
-        <button class="btn--inline pagination__btn--next">
+        <button data-goto="${
+          curPage + 1
+        }" class="btn--inline pagination__btn--next">
             <span>Page ${curPage + 1}</span>
             <svg class="search__icon">
               <use href="src/img/icons.svg#icon-arrow-right"></use>
