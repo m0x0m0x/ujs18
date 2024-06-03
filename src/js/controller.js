@@ -34,9 +34,6 @@ const controlRecipes = async function () {
 
     // 2 rendering recipe
     recipeView.render(model.state.recipe);
-
-    // TEST
-    controlServings();
   } catch (error) {
     recipeView.renderError();
   }
@@ -89,6 +86,7 @@ const controlServings = function () {
 
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addhandlerUpdateServings(controlServings);
   searchViews.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   // controlServings();

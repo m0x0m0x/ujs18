@@ -15,6 +15,17 @@ class RecipeView extends View {
       window.addEventListener(ev, handler)
     );
   }
+
+  // Handler function for doubing servings
+  addhandlerUpdateServings(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn--tiny");
+      if (!btn) return;
+      console.log(btn);
+      handler();
+    });
+  }
+
   _generateMarkup() {
     return `
       <figure class="recipe__fig">
