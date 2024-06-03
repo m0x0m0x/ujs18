@@ -26,7 +26,7 @@ export const loadRecipe = async function (id) {
     state.recipe = {
       id: recipe.id,
       title: recipe.title,
-      publisher: "Rapist",
+      publisher: recipe.publisher,
       sourceUrl: recipe.source_url,
       image: recipe.image_url,
       servings: recipe.servings,
@@ -53,7 +53,7 @@ export const loadSearchResults = async function (query) {
       return {
         id: rec.id,
         title: rec.title,
-        publisher: "Rapist",
+        publisher: rec.publisher,
         image: rec.image_url,
       };
     });
