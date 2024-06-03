@@ -22,7 +22,7 @@ class RecipeView extends View {
       const btn = e.target.closest(".btn--update-servings");
       if (!btn) return;
       console.log(btn);
-      const updateTo = +btn.dateset.updateTo;
+      const updateTo = +btn.dataset.updateTo;
       console.log(updateTo);
       handler(updateTo);
     });
@@ -66,7 +66,7 @@ class RecipeView extends View {
                     <use href="src/img/icons.svg#icon-minus-circle"></use>
                   </svg>
                 </button>
-                <button class="btn--tiny btn--update-servings data-update-to="${
+                <button class="btn--tiny btn--update-servings" data-update-to="${
                   this._data.servings + 1
                 }">
                   <svg>
