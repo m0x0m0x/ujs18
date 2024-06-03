@@ -2,6 +2,7 @@
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
 import searchViews from "./views/searchView.js";
+import resultsView from "./views/resultsView.js";
 
 // const recipeContainer = document.querySelector(".recipe");
 
@@ -43,6 +44,9 @@ const controlRecipes = async function () {
 
 const controlSearchResults = async function () {
   try {
+    resultsView.renderSpinner();
+    // console.log(resultsView);
+
     //1- Get search query
     const query = searchViews.getQuery();
     if (!query) return;
@@ -52,6 +56,7 @@ const controlSearchResults = async function () {
 
     //3 - Render results in console.log
     console.log(model.state.search.results);
+    resultsView.render(model.state.search.results);
   } catch (error) {
     console.log(error);
   }

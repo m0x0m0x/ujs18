@@ -8,10 +8,11 @@
       transition: all 0.3s;
       border-right: 1px solid #fff;
       text-decoration: none;
+      background-color: #083344;
     }
 
     &:hover {
-      background-color: $color-grey-light-1;
+      background-color: #0c4a6e;
       transform: translateY(-2px);
     }
 
