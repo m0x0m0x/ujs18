@@ -8,6 +8,7 @@ class PaginationVIew extends View {
   _parentElement = document.querySelector(".pagination");
 
   _generateMarkup() {
+    const curPage = this._data.page;
     // Compute number of pages
     const numPages = Math.ceil(
       this._data.results.length / this._data.resultsPerPage
@@ -15,19 +16,46 @@ class PaginationVIew extends View {
     console.log(numPages);
 
     // Page 1 and there are other pages
-    if (this._data.page === 1 && numPages > 1) {
-      return "page1, others";
+    if (curPage === 1 && numPages > 1) {
+      return `
+        <button class="btn--inline pagination__btn--next">
+            <span>Page ${curPage + 1}</span>
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+      `;
     }
     // On Last page
-    if (this._data.page === numPages && numPages > 1) {
-      return "lastPage";
+    if (curPage === numPages && numPages > 1) {
+      return `
+        <button class="btn--inline pagination__btn--prev">
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-arrow-left"></use>
+            </svg>
+            <span>Page ${curPage - 1}</span>
+        </button>
+      `;
     }
     // Other Page
-    if (this._data.page < numPages) {
-      return "otherpage";
+    if (curPage < numPages) {
+      return `
+        <button class="btn--inline pagination__btn--prev">
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-arrow-left"></use>
+            </svg>
+            <span>Page ${curPage - 1}</span>
+        </button>
+        <button class="btn--inline pagination__btn--next">
+            <span>Page ${curPage + 1}</span>
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+      `;
     }
     // Page 1 and there are NO other pages
-    return "only1Page";
+    return "";
   }
 }
 export default new PaginationVIew();
