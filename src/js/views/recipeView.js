@@ -1,5 +1,5 @@
 /* 
-Views from the MC architecture
+Views from the MVC architecture
 */
 
 class RecipeView {
