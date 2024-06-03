@@ -9,7 +9,6 @@ class ResultsView extends View {
   _errorMessage = "NoFucker DO again bastard";
 
   _generateMarkup() {
-    console.log(this._data);
     return this._data.map(this.__generateMarkupPreview).join("");
   }
 
