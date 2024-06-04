@@ -32,7 +32,7 @@ export default class View {
     // Comparison between curElements and newElements
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
-      console.log(curEl, newEl.isEqualNode(curEl));
+      // console.log(curEl, newEl.isEqualNode(curEl));
 
       // Updates changed text
       if (
