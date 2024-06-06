@@ -132,3 +132,28 @@ const clearBookmarks = function () {
   localStorage.clear("bookmarks");
 };
 clearBookmarks();
+
+// Upload Recipee Functton
+/*
+https://forkify-api.herokuapp.com/v2
+Pakey - 6d693618-7b34-4bf1-ba2d-c5375c0770e5
+Example URL:https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886?key=<insert your key>
+*/
+
+export const uploadRecipe = async function (newRecipe) {
+  console.log(Object.entries(newRecipe));
+  try {
+    const ingredients = Object.entries(newRecipe)
+      .filter((entry) => entry[0].startsWith("ingredient") && entry[1] != "")
+      .map((ing) => {
+        const ingArr = ing[1].replaceAll("", "").split(",");
+        if (ingArr.length !== 3)
+          throw new Error("Fukr wrong formation , use right format !");
+        const [quantity, unit, description] = ingArr;
+        return { quantity: quantity ? +quantity : null, unit, description };
+      });
+    console.log(ingredients);
+  } catch (error) {
+    throw error;
+  }
+};
