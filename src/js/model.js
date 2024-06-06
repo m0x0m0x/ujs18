@@ -39,7 +39,7 @@ const createRecipeObject = function (data) {
 // state object
 export const loadRecipe = async function (id) {
   try {
-    const data = await AJAXX(`${API_URL}${id}`);
+    const data = await AJAXX(`${API_URL}${id}?=key${smellyPanty}`);
     state.recipe = createRecipeObject(data);
 
     //Formatting the response
@@ -60,7 +60,7 @@ export const loadRecipe = async function (id) {
 export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
-    const data = await AJAXX(`${API_URL}?search=${query}`);
+    const data = await AJAXX(`${API_URL}?search=${query}&=key${smellyPanty}`);
 
     // Here this state variable is extracting data from the api
     state.search.results = data.data.recipes.map((rec) => {
