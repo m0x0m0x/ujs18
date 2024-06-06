@@ -4,8 +4,7 @@ Model from he MVC architecture
 */
 
 import { API_URL, RES_PER_PAGE, smellyPanty } from "./config.js";
-// import { getJSON, sendJSON } from "./helpers.js";
-import { AJAXXX } from "./helpers.js";
+import { getJSON, sendJSON } from "./helpers.js";
 
 // State contains all data to build appliation
 export const state = {
@@ -40,8 +39,7 @@ const createRecipeObject = function (data) {
 export const loadRecipe = async function (id) {
   state.recipe = createRecipeObject(data);
   try {
-    const data = await AJAXXX(`${API_URL}${id}`);
-    state.recipe = createRecipeObject(data);
+    const data = await getJSON(`${API_URL}${id}`);
 
     //Formatting the response
 
@@ -61,7 +59,7 @@ export const loadRecipe = async function (id) {
 export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
-    const data = await AJAXXX(`${API_URL}?search=${query}`);
+    const data = await getJSON(`${API_URL}?search=${query}`);
 
     // Here this state variable is extracting data from the api
     state.search.results = data.data.recipes.map((rec) => {
@@ -172,7 +170,7 @@ export const uploadRecipe = async function (newRecipe) {
       ingredients,
     };
 
-    const data = await AJAXXX(`${API_URL}?key=${smellyPanty}`, recipe);
+    const data = await sendJSON(`${API_URL}?key=${smellyPanty}`, recipe);
     state.recipe = createRecipeObject(data);
     addBookmark(state.recipe);
   } catch (error) {
