@@ -1,5 +1,6 @@
 // Import statements
 import * as model from "./model.js";
+import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
 import searchViews from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
@@ -116,6 +117,17 @@ const controlAddRecipe = async function (newRecipe) {
     //Uplaod function new recipee
     await model.uploadRecipe(newRecipe);
     console.log(model.state.recipe);
+
+    // Rendering Recipe
+    recipeView.render(model.state.recipe);
+
+    //success message
+    addRecipeView.renderMessage();
+
+    //close form window
+    setTimeout(function () {
+      addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
   } catch (error) {
     console.error("💣", error);
     addRecipeView.renderError(error.message);
