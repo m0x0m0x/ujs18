@@ -5,6 +5,15 @@ Related to the resultsview.js
 export default class View {
   _data;
 
+  /**
+   * Render received object to the dom
+   * @param {Object | Objectp[]} data The data to be rendered (eg Pussy)
+   * @param {boolean} [render=true] if False crate markup sting , instead of rendering to the dom
+   * @returns {undefined | string} A markup string is retuned if false
+   * @this {Object} View Instance
+   * @m0x0m0x - BootyDance
+   * @todo - Smell her pussy
+   */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
