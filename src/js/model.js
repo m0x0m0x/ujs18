@@ -37,7 +37,6 @@ const createRecipeObject = function (data) {
 
 // state object
 export const loadRecipe = async function (id) {
-  state.recipe = createRecipeObject(data);
   try {
     const data = await getJSON(`${API_URL}${id}`);
 
