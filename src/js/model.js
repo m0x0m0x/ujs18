@@ -18,7 +18,7 @@ export const state = {
   bookmarks: [],
 };
 
-// Function for fomratting data
+// Create  object
 const createRecipeObject = function (data) {
   const { recipe } = data.data;
   recipe.image_url = recipe.image_url.replace("http://", "https://");
@@ -31,6 +31,7 @@ const createRecipeObject = function (data) {
     servings: recipe.servings,
     cookingTime: recipe.cooking_time,
     ingredients: recipe.ingredients,
+    ...(recipe.smellyPanty && { key: recipe.smellyPanty }),
   };
 };
 
@@ -146,7 +147,7 @@ Example URL:https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054
 */
 
 export const uploadRecipe = async function (newRecipe) {
-  console.log(Object.entries(newRecipe));
+  // console.log(Object.entries(newRecipe));
   try {
     const ingredients = Object.entries(newRecipe)
       .filter((entry) => entry[0].startsWith("ingredient") && entry[1] != "")
@@ -172,6 +173,7 @@ export const uploadRecipe = async function (newRecipe) {
 
     const data = await sendJSON(`${API_URL}?key=${smellyPanty}`, recipe);
     state.recipe = createRecipeObject(data);
+    addBookmark(state.recipe);
   } catch (error) {
     throw error;
   }
