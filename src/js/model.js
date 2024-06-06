@@ -41,6 +41,7 @@ export const loadRecipe = async function (id) {
   state.recipe = createRecipeObject(data);
   try {
     const data = await AJAXXX(`${API_URL}${id}`);
+    state.recipe = createRecipeObject(data);
 
     //Formatting the response
 
