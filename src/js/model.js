@@ -31,7 +31,7 @@ const createRecipeObject = function (data) {
     servings: recipe.servings,
     cookingTime: recipe.cooking_time,
     ingredients: recipe.ingredients,
-    ...(recipe.smellyPanty && { key: recipe.smellyPanty }),
+    ...(recipe.key && { key: recipe.key }),
   };
 };
 
@@ -169,7 +169,6 @@ export const uploadRecipe = async function (newRecipe) {
       servings: +newRecipe.servings,
       ingredients,
     };
-    console.log(recipe);
 
     const data = await sendJSON(`${API_URL}?key=${smellyPanty}`, recipe);
     state.recipe = createRecipeObject(data);
