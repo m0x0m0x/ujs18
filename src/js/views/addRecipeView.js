@@ -33,7 +33,7 @@ class AddRecipeView extends View {
 
   // K1 - Implementing the handler function for the key
   _handleKeyPress(event) {
-    if (event.key === "a") {
+    if (event.key === "x") {
       // Change "Enter" to the key you want to use
       this.toggleWindow();
     }
